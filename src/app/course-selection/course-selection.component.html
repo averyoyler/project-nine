@@ -1,0 +1,35 @@
+<div class="backgroundImage"></div>
+<div class="container">
+  <div class="topBar">
+    <div class="topBarContent">
+      <i class="fas fa-golf-ball"></i>
+      <span>BIRDIE</span>
+      <span style="font-size: 28px">Golf Score Tracker</span>
+    </div>
+  </div>
+  <div class="selector">SELECT A COURSE</div>
+  <div class="middleBox">
+
+    <div *ngFor="let course of courses">
+      <mat-card class="example-card courseBox">
+        <mat-card-header>
+          <mat-card-title>{{ course.name }}</mat-card-title>
+          <!-- <mat-card-subtitle>Dog Breed</mat-card-subtitle> -->
+        </mat-card-header>
+        <img
+          mat-card-image
+          [src]="course.image"
+          alt="Photo of a Shiba Inu"
+        />
+        <!-- <mat-card-content>
+        </mat-card-content> -->
+        <mat-card-actions>
+          <button [id]=course.id mat-button (click)="setGolfCourse($event)" [routerLink]="['course', course.id]">SELECT</button>
+          <!-- <button mat-button>SHARE</button> -->
+        </mat-card-actions>
+      </mat-card>      
+    </div>
+
+
+  </div>
+</div>
