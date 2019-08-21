@@ -10,25 +10,24 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class CardComponent implements OnInit {
 
-  course: any;
   id: string;
+  tee: string;
+  holes: any;
+  data: any;
 
-  constructor(private courseService: CourseService, private route: ActivatedRoute) { }
+  constructor(private courseService: CourseService, private route: ActivatedRoute) {}
 
   ngOnInit() {
     this.id = this.route.snapshot.paramMap.get('id');
-    console.log(this.id);
+    this.tee = this.route.snapshot.paramMap.get('tee');
 
     this.courseService
     .getGolfCourse(this.id)
-    .subscribe(data => console.log(data.data));
+    .subscribe(data => {
+      console.log(data.data);
+      this.data = data.data;
+      this.holes = data.data.holes;
+      console.log(this.holes);
+    });
   }
-
-  getSingleCourse(element) {
-    const id = element.currentTarget.id;
-    this.courseService
-    .getGolfCourse(id)
-    .subscribe(data => this.course = data.data);
-  }
-
 }

@@ -14,6 +14,7 @@ import { AppComponent } from './app.component';
 import { CourseSelectionComponent } from './course-selection/course-selection.component';
 import { CardComponent } from './card/card.component';
 import { FormComponent } from './form/form.component';
+import { FirstLetterUppercasePipe } from './pipes/first-letter-uppercase.pipe';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { FormComponent } from './form/form.component';
     CourseSelectionComponent,
     CardComponent,
     FormComponent,
+    FirstLetterUppercasePipe,
   ],
   imports: [
     BrowserModule,

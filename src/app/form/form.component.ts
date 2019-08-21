@@ -19,6 +19,5 @@ export class FormComponent implements OnInit {
   select(teeType) {
     const id = teeType.target.id;
     this.tee = id;
-    console.log(this.courseId);
   }
 }

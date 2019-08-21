@@ -8,7 +8,7 @@ import { FormComponent } from './form/form.component';
 const routes: Routes = [
   { path: '', pathMatch: 'full', component: CourseSelectionComponent},
   { path: 'form/:id', component: FormComponent},
-  { path: 'card/:id', component: CardComponent}
+  { path: 'card/:id/:tee', component: CardComponent}
 ];
 
 @NgModule({
