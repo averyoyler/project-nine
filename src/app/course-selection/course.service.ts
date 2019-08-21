@@ -3,15 +3,8 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-interface GolfCourse {
-  id: string;
-  name: string;
-  image: string;
-}
-
-interface GolfCourses {
-  courses: GolfCourse[];
-}
+import { GolfCourse } from '../interfaces/golf-course';
+import { GolfCourses } from '../interfaces/golf-courses';
 
 @Injectable({
   providedIn: 'root'

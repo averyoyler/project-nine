@@ -15,6 +15,7 @@ import { CourseSelectionComponent } from './course-selection/course-selection.co
 import { CardComponent } from './card/card.component';
 import { FormComponent } from './form/form.component';
 import { FirstLetterUppercasePipe } from './pipes/first-letter-uppercase.pipe';
+import { DuplicateNamePipe } from './pipes/duplicate-name.pipe';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { FirstLetterUppercasePipe } from './pipes/first-letter-uppercase.pipe';
     CardComponent,
     FormComponent,
     FirstLetterUppercasePipe,
+    DuplicateNamePipe,
   ],
   imports: [
     BrowserModule,

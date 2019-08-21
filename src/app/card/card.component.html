@@ -1,32 +1,86 @@
 <!-- 
     SET TEE IN URL √
-    GET TEE FROM URL
+    GET TEE FROM URL √
     GET DATA AND FILL IN HTML
  -->
-
-<div class="inner">
-  <div class="scoreCard">
-      <div class="titleBox">
+<div class="backgroundImage"></div>
+<div class="container">
+    <div class="inner">
+      <div class="scoreCard">
+        <div class="titleBox">
           <div class="holeColor">Hole #</div>
-          <div [className]="tee" id="teeTitle">{{ tee | firstLetterUppercase }}</div>
+          <div [className]="tee" id="teeTitle">
+            {{ tee | firstLetterUppercase }}
+          </div>
           <div class="handiColor">Handicap</div>
           <div class="parColor">Par</div>
-          <div onblur="editPlayerName(this)" onkeydown="playerName(event, this)" contenteditable="true" id="player1"></div>
-          <div onblur="editPlayerName(this)" onkeydown="playerName(event, this)" contenteditable="true" id="player2"></div>
-          <div onblur="editPlayerName(this)" onkeydown="playerName(event, this)" contenteditable="true" id="player3"></div>
-          <div onblur="editPlayerName(this)" onkeydown="playerName(event, this)" contenteditable="true" id="player4"></div>
-      </div>
-      <div class="scores">
-        <div id="h{{ hole.hole }}" *ngFor="let hole of holes">
+          <div
+            onblur="editPlayerName(this)"
+            onkeydown="playerName(event, this)"
+            contenteditable="true"
+            id="player1"
+          ></div>
+          <div
+            onblur="editPlayerName(this)"
+            onkeydown="playerName(event, this)"
+            contenteditable="true"
+            id="player2"
+          ></div>
+          <div
+            onblur="editPlayerName(this)"
+            onkeydown="playerName(event, this)"
+            contenteditable="true"
+            id="player3"
+          ></div>
+          <div
+            onblur="editPlayerName(this)"
+            onkeydown="playerName(event, this)"
+            contenteditable="true"
+            id="player4"
+          ></div>
+        </div>
+        <div class="scores">
+          <div id="h{{ hole.hole }}" *ngFor="let hole of holes">
             <div class="holeColor box">{{ hole.hole }}</div>
-            <div [ngClass]="[tee]" class="box" id="tee{{ hole.hole }}">{{ hole.teeBoxes[0].yards }}</div>
-            <div class="box handiColor" id="handi{{ hole }}">{{ hole.teeBoxes[0].hcp }}</div>
-            <div class="box parColor" id="par{{ hole.hole }}">{{ hole.teeBoxes[0].par }}</div>
-            <div contenteditable="true" onblur="scores(this)" onkeydown="validateScoreInput(event, this)" class="box p1" id="p1h{{ hole }}"></div>
-            <div contenteditable="true" onblur="scores(this)" onkeydown="validateScoreInput(event, this)" class="box p2" id="p2h{{ hole }}"></div>
-            <div contenteditable="true" onblur="scores(this)" onkeydown="validateScoreInput(event, this)" class="box p3" id="p3h{{ hole }}"></div>
-            <div contenteditable="true" onblur="scores(this)" onkeydown="validateScoreInput(event, this)" class="box p4" id="p4h{{ hole }}"></div>
+            <div [ngClass]="[tee]" class="box" id="tee{{ hole.hole }}">
+              {{ hole.teeBoxes[0].yards }}
+            </div>
+            <div class="box handiColor" id="handi{{ hole }}">
+              {{ hole.teeBoxes[0].hcp }}
+            </div>
+            <div class="box parColor" id="par{{ hole.hole }}">
+              {{ hole.teeBoxes[0].par }}
+            </div>
+            <div
+              contenteditable="true"
+              onblur="scores(this)"
+              onkeydown="validateScoreInput(event, this)"
+              class="box p1"
+              id="p1h{{ hole }}"
+            ></div>
+            <div
+              contenteditable="true"
+              onblur="scores(this)"
+              onkeydown="validateScoreInput(event, this)"
+              class="box p2"
+              id="p2h{{ hole }}"
+            ></div>
+            <div
+              contenteditable="true"
+              onblur="scores(this)"
+              onkeydown="validateScoreInput(event, this)"
+              class="box p3"
+              id="p3h{{ hole }}"
+            ></div>
+            <div
+              contenteditable="true"
+              onblur="scores(this)"
+              onkeydown="validateScoreInput(event, this)"
+              class="box p4"
+              id="p4h{{ hole }}"
+            ></div>
+          </div>
         </div>
       </div>
-  </div>
-  </div>
+    </div>
+</div>

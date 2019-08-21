@@ -27,5 +27,22 @@ html, body {
 .column {
   flex-direction: column;
 }
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+// html, body { height: 100%; }
+// body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.backgroundImage {
+  /* The image used */
+  background-image: url("./assets/coursev3.jpg");
+
+  /* Add the blur effect */
+  filter: blur(5px);
+
+  /* Full height */
+  height: 100%;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position-x: right;
+}
