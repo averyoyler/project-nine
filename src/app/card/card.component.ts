@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CourseService } from '../course-selection/course.service';
+import { ActivatedRoute } from '@angular/router';
 
 
 @Component({
@@ -10,20 +11,23 @@ import { CourseService } from '../course-selection/course.service';
 export class CardComponent implements OnInit {
 
   course: any;
+  id: string;
 
-  constructor(private courseService: CourseService) { }
+  constructor(private courseService: CourseService, private route: ActivatedRoute) { }
 
   ngOnInit() {
-    this.courseService.getGolfCourseId();
+    this.id = this.route.snapshot.paramMap.get('id');
+    console.log(this.id);
+
     this.courseService
-    .getGolfCourse()
+    .getGolfCourse(this.id)
     .subscribe(data => console.log(data.data));
   }
 
   getSingleCourse(element) {
     const id = element.currentTarget.id;
     this.courseService
-    .getGolfCourse()
+    .getGolfCourse(id)
     .subscribe(data => this.course = data.data);
   }
 

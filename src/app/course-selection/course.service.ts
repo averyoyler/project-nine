@@ -18,8 +18,6 @@ interface GolfCourses {
 })
 export class CourseService {
 
-  courseId: any;
-
   constructor(private httpClient: HttpClient) { }
 
   getGolfCourses(): Observable<GolfCourse[]> {
@@ -29,18 +27,9 @@ export class CourseService {
     );
   }
 
-  getGolfCourse(): Observable<any> {
-    const url = `http://golf-courses-api.herokuapp.com/courses/${this.courseId}`;
+  getGolfCourse(id): Observable<any> {
+    const url = `http://golf-courses-api.herokuapp.com/courses/${id}`;
     return this.httpClient.get(url)
-  }
-
-  getGolfCourseId() {
-    console.log('id: ' + this.courseId);
-    return this.courseId;
-  }
-
-  setGolfCourse(id) {
-    this.courseId = id;
   }
 }
 

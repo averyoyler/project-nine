@@ -1,1 +1,15 @@
-<p>card works!</p>
+<div class="inner">
+  <div class="scoreCard">
+      <div class="titleBox">
+          <div class="holeColor">Hole #</div>
+          <div id="teeTitle"></div>
+          <div class="handiColor">Handicap</div>
+          <div class="parColor">Par</div>
+          <div onblur="editPlayerName(this)" onkeydown="playerName(event, this)" contenteditable="true" id="player1"></div>
+          <div onblur="editPlayerName(this)" onkeydown="playerName(event, this)" contenteditable="true" id="player2"></div>
+          <div onblur="editPlayerName(this)" onkeydown="playerName(event, this)" contenteditable="true" id="player3"></div>
+          <div onblur="editPlayerName(this)" onkeydown="playerName(event, this)" contenteditable="true" id="player4"></div>
+      </div>
+      <div class="scores"></div>
+  </div>
+  </div>

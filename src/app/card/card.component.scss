@@ -1,0 +1,163 @@
+$trentsGrey: #DADFEA;
+
+.inner {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.scoreCard {
+  border: 20px solid white;
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  font-size: 22px;
+  div {
+    display: flex;
+    flex-direction: column;
+  }
+  .titleBox {
+    background-color: rgba(219, 223, 233, 0.9);
+    height: 100%;
+    div {
+      height: 55px;
+      width: 175px;
+      border-bottom: 1px solid grey;
+      border-right: 1px solid grey;
+      border-left: 1px solid grey;
+      display: flex;
+      justify-content: center;
+      text-align: center;
+    }
+    div:first-child {
+      border-top: 1px solid grey;
+    }
+  }
+  .scores {
+    //border-top: 1px solid grey;
+    //border-right: 1px solid grey;
+    //border-bottom: 1px solid grey;
+    display: flex;
+    flex-direction: row;
+    background-color: rgba(219, 223, 233, 0.9);
+    height: 100%;
+    div {
+      display: flex;
+      //justify-content: center;
+      //align-items: center;
+      text-align: center;
+      width: 50px;
+    }
+    .outbox {
+      width: 60px;
+    }
+    .innbox {
+      width: 60px;
+    }
+    .totalbox {
+      width: 90px;
+    }
+  }
+}
+
+.box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 55px;
+  text-align: center;
+  border-bottom: 1px solid grey;
+  border-right: 1px solid grey;
+}
+
+.teeColor{
+
+}
+
+.handiColor {
+  background-color: rgba(236, 230, 142, 0.7);
+}
+
+.parColor {
+  background-color: rgba(142, 205, 236, 0.7);
+}
+
+.holeColor {
+  background-color: rgba(193, 220, 170, 0.7);
+  border-top: 1px solid grey;
+}
+
+.popbox {
+  position: relative;
+}
+
+.popup {
+  font-size: 12px;
+  visibility: hidden;
+  width: 160px;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 8px 0;
+  position: absolute;
+  z-index: 1;
+  left: 107px;;
+}
+
+.popup::after {
+  content: "";
+  position: absolute;
+  top: 30%;
+  left: -14px;
+  border-width: 7px;
+  border-style: solid;
+  border-color: rgba(0, 0, 0, 0.6) transparent transparent transparent;
+  transform: rotate(90deg);
+}
+
+
+
+#teeTitle {
+  position: relative;
+}
+
+#teeEditButton {
+  visibility: hidden;
+  position: absolute;
+  left: 10px;
+  z-index: 1;
+  font-size: 16px;
+}
+
+
+#editTeePickerBox {
+  visibility: hidden;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  position: absolute;
+  right: -170px;
+  height: 150%;
+  z-index: 1;
+  font-size: 13px;
+  background-color: $trentsGrey;
+  border-radius: 10px;
+  border: none;
+  span {
+    width: 97%;
+    border-radius: 5px;
+  }
+}
+
+#editTeePickerBox::after {
+  content: "";
+  position: absolute;
+  top: 42%;
+  left: -14px;
+  border-width: 7px;
+  border-style: solid;
+  border-color: $trentsGrey transparent transparent transparent;
+  transform: rotate(90deg);
+}

@@ -13,12 +13,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CourseSelectionComponent } from './course-selection/course-selection.component';
 import { CardComponent } from './card/card.component';
+import { FormComponent } from './form/form.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CourseSelectionComponent,
     CardComponent,
+    FormComponent,
   ],
   imports: [
     BrowserModule,
