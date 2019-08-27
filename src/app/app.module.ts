@@ -16,6 +16,9 @@ import { CardComponent } from './card/card.component';
 import { FormComponent } from './form/form.component';
 import { FirstLetterUppercasePipe } from './pipes/first-letter-uppercase.pipe';
 import { DuplicateNamePipe } from './pipes/duplicate-name.pipe';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { environment } from 'src/environments/environment';
 
 @NgModule({
   declarations: [
@@ -30,6 +33,8 @@ import { DuplicateNamePipe } from './pipes/duplicate-name.pipe';
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFirestoreModule,
     HttpClientModule,
     MatFormFieldModule,
     MatSelectModule,

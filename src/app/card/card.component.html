@@ -15,7 +15,7 @@
           <div class="handiColor">Handicap</div>
           <div class="parColor">Par</div>
           <div
-            onblur="editPlayerName(this)"
+            (blur)="editPlayerName($event)"
             onkeydown="playerName(event, this)"
             contenteditable="true"
             id="player1"

@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { CourseService } from '../course-selection/course.service';
 import { ActivatedRoute } from '@angular/router';
+import { Player } from '../interfaces/player';
+import { Game } from '../interfaces/game';
+import { PlayerService } from '../player.service';
 
 
 @Component({
@@ -14,8 +17,9 @@ export class CardComponent implements OnInit {
   tee: string;
   holes: any;
   data: any;
+  players: Player[];
 
-  constructor(private courseService: CourseService, private route: ActivatedRoute) {}
+  constructor(private courseService: CourseService, private route: ActivatedRoute, private playerService: PlayerService) {}
 
   ngOnInit() {
     this.id = this.route.snapshot.paramMap.get('id');
@@ -29,5 +33,39 @@ export class CardComponent implements OnInit {
       this.holes = data.data.holes;
       console.log(this.holes);
     });
+
+    // this.getPlayers();
+    // this.getPlayer('player1');
+    this.getSavedGame('123');
+
   }
+
+  editPlayerName(element) {
+    console.log(element.target.id);
+  }
+
+  getPlayers() {
+    this.playerService
+    .getPlayers()
+    .subscribe(data => {
+      console.log(data);
+    })
+  }
+
+  getPlayer(id) {
+    this.playerService
+    .getPlayer(id)
+    .subscribe(data => {
+      console.log(data);
+    })
+  }
+
+  getSavedGame(id) {
+    this.playerService
+    .getSavedGame(id)
+    .subscribe(data => {
+      console.log(data);
+    })
+  }
+
 }
