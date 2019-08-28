@@ -8,6 +8,6 @@
           <button type="button" mat-raised-button id="men" (click)="select($event)">MEN</button>
           <button type="button" mat-raised-button id="women" (click)="select($event)">WOMEN</button>
       </form>
-      <button mat-raised-button id="continue" [routerLink]="['/card', courseId, tee]">CONTINUE</button>
+      <button mat-raised-button id="continue" (click)="createNewGame()">CONTINUE</button>
   </div>
 </div>

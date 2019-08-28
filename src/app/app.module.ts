@@ -7,6 +7,8 @@ import {
   MatSelectModule,
   MatCardModule,
   MatButtonModule,
+  MatMenuModule,
+  MatToolbarModule,
 } from '@angular/material';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -39,7 +41,9 @@ import { environment } from 'src/environments/environment';
     MatFormFieldModule,
     MatSelectModule,
     MatCardModule,
-    MatButtonModule
+    MatButtonModule,
+    MatMenuModule,
+    MatToolbarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

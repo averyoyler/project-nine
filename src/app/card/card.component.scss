@@ -185,3 +185,9 @@ $trentsGrey: #DADFEA;
   border-color: $trentsGrey transparent transparent transparent;
   transform: rotate(90deg);
 }
+
+#save {
+  position: fixed;
+  bottom: 75px;
+  left: calc(50% - 40px);
+}
