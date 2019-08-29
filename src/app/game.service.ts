@@ -51,10 +51,28 @@ export class GameService {
       );
   }
 
+  getSavedGames(): Observable<Game[]> {
+    return this.gamesRef.snapshotChanges()
+      .pipe( // pipes are used when we want to do something extra with the observable -- expects operators
+        map((games: DocumentChangeAction<Game>[]): Game[] => { // map expects a function -- works a lot like
+          return games.map((game: DocumentChangeAction<Game>): Game => {
+            return {
+              id: game.payload.doc.id,
+              players: game.payload.doc.data().players,
+              course: game.payload.doc.data().course,
+              tee: game.payload.doc.data().tee
+            };
+          });
+        }),
+        catchError(this.errorHandler) 
+      ); 
+  }
+
   createNewGame(courseId, tee) {
     const game = {
       course: courseId,
       tee: tee,
+      name: null,
       players: [
         {
           name: null,
@@ -83,6 +101,12 @@ export class GameService {
     return this.gamesRef.doc(gameId).update(game) // this.companyRef.update(company)
       .then(_ => console.log('Success on update'))
       .catch(error => console.log('update', error));
+  }
+
+  updateGameName(gameId, name) {
+    this.gamesRef.doc(gameId).update({name: name})
+    .then(_ => console.log('Success on update'))
+    .catch(error => console.log('update', error));
   }
 
   private errorHandler(error) {

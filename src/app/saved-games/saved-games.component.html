@@ -1,0 +1,10 @@
+<div class="configurations">
+    <div id="numberOfPlayers">
+        <div class="closeButton" onclick="closeConfigs()">&#215;</div>
+        <span>Select A Tee:</span>
+        <form id="teeForm" *ngFor="let game of savedGames">
+            <button type="button" mat-raised-button id="{{ game.id }}" (click)="select($event)">{{ game.id }}</button>
+        </form>
+        <button (click)="selectGame()">CONTINUE</button>
+    </div>
+  </div>

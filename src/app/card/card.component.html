@@ -9,7 +9,7 @@
     <div class="topBarContent">
       <i [routerLink]="['']" class="fas fa-golf-ball"></i>
       <span>BIRDIE</span>
-      <span class="small">Saved Games</span>
+      <span [routerLink]="['saved-games']" class="small">Saved Games</span>
     </div>
   </div>
   <div class="inner">
@@ -105,3 +105,21 @@
 >
   SAVE
 </button>
+
+<div class="configurations" *ngIf="show">
+  <div id="numberOfPlayers">
+    <div class="closeButton" onclick="closeConfigs()">&#215;</div>
+    <span>Enter New Game Name</span>
+    <form id="teeForm">
+      <input #name type="text" />
+    </form>
+    <button mat-raised-button id="continue" (click)="updateGameName(name)">
+      CONTINUE
+    </button>
+  </div>
+</div>
+
+<div *ngIf="popup" class="saved">
+  <span>Your scorecard has been saved!</span>
+  <i (click)="hide()" class="fas fa-times-circle"></i>
+</div>

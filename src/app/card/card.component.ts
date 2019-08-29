@@ -21,6 +21,8 @@ export class CardComponent implements OnInit {
   data: any;
   players: Player[];
   game: any;
+  show: boolean = false;
+  popup: boolean = false;
 
   constructor(private courseService: CourseService, private route: ActivatedRoute, private gameService: GameService) {}
 
@@ -84,14 +86,28 @@ export class CardComponent implements OnInit {
     const holeNumber = (event.target.id.charAt(3) - 1);
     const newScore = event.target.textContent !== '' ? Number(event.target.textContent) : null;
     this.game.players[playerId].scores[holeNumber] = newScore;
-    console.log('ID: ' + playerId);
-    console.log('Hole: ' + holeNumber);
-    console.log('Text: ' + newScore);
-    console.log(this.game);
+  }
+
+  updateGameName(element) {
+    this.show = false;
+    const name = element.value;
+    this.game.name = name;
+    this.gameService.saveGame(this.gameId, this.game)
   }
 
   saveGame() {
-    this.gameService.saveGame(this.gameId, this.game)
+    if(!this.game.name) {
+      this.show = true;
+    }
+    else {
+      this.show = false;
+      this.gameService.saveGame(this.gameId, this.game)
+    }
+    this.popup = true;
+  }
+
+  hide() {
+    this.popup = false;
   }
 
 }

@@ -25,6 +25,6 @@ export class FormComponent implements OnInit {
 
   createNewGame() {
     this.gameService.createNewGame(this.courseId, this.tee)
-    .then(_ => this.router.navigate(['/card/miIKCVY1IshdQ8V5Dr8E']));
+    .then(_ => this.router.navigate(['/card/FvP2HQ0EZRo2eYCvp64P']));
   }
 }

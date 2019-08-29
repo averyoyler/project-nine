@@ -7,8 +7,6 @@ import {
   MatSelectModule,
   MatCardModule,
   MatButtonModule,
-  MatMenuModule,
-  MatToolbarModule,
 } from '@angular/material';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -21,6 +19,7 @@ import { DuplicateNamePipe } from './pipes/duplicate-name.pipe';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { environment } from 'src/environments/environment';
+import { SavedGamesComponent } from './saved-games/saved-games.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +29,7 @@ import { environment } from 'src/environments/environment';
     FormComponent,
     FirstLetterUppercasePipe,
     DuplicateNamePipe,
+    SavedGamesComponent,
   ],
   imports: [
     BrowserModule,
@@ -42,8 +42,6 @@ import { environment } from 'src/environments/environment';
     MatSelectModule,
     MatCardModule,
     MatButtonModule,
-    MatMenuModule,
-    MatToolbarModule
   ],
   providers: [],
   bootstrap: [AppComponent]
