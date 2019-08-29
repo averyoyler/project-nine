@@ -43,8 +43,8 @@ export class CardComponent implements OnInit {
     this.gameService
     .getSavedGame(id)
     .subscribe(data => {
-      console.log("Saved Game:")
-      console.log(data);
+      // console.log("Saved Game:")
+      // console.log(data);
       this.game = data;
       this.courseId = data.course;
       this.tee = data.tee;
@@ -59,8 +59,8 @@ export class CardComponent implements OnInit {
     .subscribe(data => {
       this.data = data.data;
       this.holes = data.data.holes;
-      console.log(this.holes);
-      console.log(this.game.players[0].scores[0]);
+      // console.log(this.holes);
+      // console.log(this.game.players[0].scores[0]);
     });
   }
 

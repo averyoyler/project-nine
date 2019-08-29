@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { GameService } from '../game.service';
+import * as uuid from 'uuid';
 
 @Component({
   selector: 'app-form',
@@ -20,11 +21,12 @@ export class FormComponent implements OnInit {
   select(teeType) {
     const id = teeType.target.id;
     this.tee = id;
-    console.log(this.tee);
+    this.createNewGame();
   }
 
   createNewGame() {
-    this.gameService.createNewGame(this.courseId, this.tee)
-    .then(_ => this.router.navigate(['/card/BWkB9PGzipG5CAQVvZnQ']));
+    const docId = uuid.v4();
+    this.gameService.createNewGame(this.courseId, this.tee, docId)
+    .then(_ => this.router.navigate(['/card', docId]));
   }
 }

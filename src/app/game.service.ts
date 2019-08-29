@@ -42,7 +42,7 @@ export class GameService {
       ); 
   }
 
-  createNewGame(courseId, tee) {
+  createNewGame(courseId, tee, docId) {
     const game = {
       course: courseId,
       tee: tee,
@@ -66,7 +66,7 @@ export class GameService {
         }
       ]
     }
-    return this.gamesRef.add(game) // this.companyRef.set(company)
+    return this.gamesRef.doc(docId).set(game) // this.companyRef.set(company)
       .then(_ => console.log('Success on set'))
       .catch(error => console.log('add', error));
   }
