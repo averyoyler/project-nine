@@ -1,10 +1,10 @@
 <div class="configurations">
     <div id="numberOfPlayers">
         <div class="closeButton" onclick="closeConfigs()">&#215;</div>
-        <span>Select A Tee:</span>
+        <span>Select a Game</span>
         <form id="teeForm" *ngFor="let game of savedGames">
-            <button type="button" mat-raised-button id="{{ game.id }}" (click)="select($event)">{{ game.id }}</button>
+            <button type="button" mat-raised-button id="{{ game.id }}" [routerLink]="['/card', game.id]" (click)="select($event)">{{ game.name }}</button>
         </form>
-        <button (click)="selectGame()">CONTINUE</button>
+        <!-- <button (click)="selectGame()">CONTINUE</button> -->
     </div>
   </div>

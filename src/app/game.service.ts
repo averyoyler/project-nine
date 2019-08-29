@@ -58,8 +58,9 @@ export class GameService {
           return games.map((game: DocumentChangeAction<Game>): Game => {
             return {
               id: game.payload.doc.id,
-              players: game.payload.doc.data().players,
               course: game.payload.doc.data().course,
+              name: game.payload.doc.data().name,
+              players: game.payload.doc.data().players,
               tee: game.payload.doc.data().tee
             };
           });

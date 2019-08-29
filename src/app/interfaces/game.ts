@@ -1,6 +1,7 @@
 export interface Game {
   id: string;
   course: string;
-  tee: string;
+  name: string;
   players: [];
+  tee: string;
 }
