@@ -1,10 +1,16 @@
 <div class="configurations">
-    <div id="numberOfPlayers" *ngIf="savedGames">
-        <div class="closeButton" (click)="goBack()">&#215;</div>
-        <span>Select a Game</span>
-        <form id="teeForm" *ngFor="let game of savedGames">
-            <button type="button" mat-raised-button id="{{ game.id }}" [routerLink]="['/card', game.id]">{{ game.name }}</button>
-        </form>
-        <!-- <button (click)="selectGame()">CONTINUE</button> -->
-    </div>
+  <div id="numberOfPlayers" *ngIf="savedGames">
+    <div class="closeButton" (click)="goBack()">&#215;</div>
+    <span>Select a Game</span>
+    <form id="teeForm" *ngFor="let game of savedGames">
+      <button
+        type="button"
+        mat-raised-button
+        id="{{ game.id }}"
+        [routerLink]="['/card', game.id]"
+      >
+        {{ game.name }}
+      </button>
+    </form>
   </div>
+</div>

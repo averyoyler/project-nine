@@ -39,22 +39,6 @@ export class CardComponent implements OnInit {
     console.log(this.game);
   }
 
-  getPlayers() {
-    this.gameService
-    .getPlayers()
-    .subscribe(data => {
-      console.log(data);
-    })
-  }
-
-  getPlayer(id) {
-    this.gameService
-    .getPlayer(id)
-    .subscribe(data => {
-      console.log(data);
-    })
-  }
-
   getSavedGame(id) {
     this.gameService
     .getSavedGame(id)

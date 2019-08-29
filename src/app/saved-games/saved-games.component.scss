@@ -45,25 +45,8 @@ $mainFont: 'Quicksand', sans-serif;
       box-shadow: 8px 8px 5px 0 grey;
       //box-shadow: 3px 3px 10px 0 inset;
     }
-    #pro {
-      color: #ffffff;
-      background-color: $pro;
-      transition: 0.7s;
-    }
-    #champion {
-      color: #ffffff;
-      background-color: $champ;
-      transition: 0.7s;
-    }
-    #men {
-      color: grey;
-      background-color: $men;
-      transition: 0.7s;
-    }
-    #women {
-      color: #ffffff;
-      background-color: $women;
-      transition: 0.7s;
+    button {
+      width: 250px;
     }
   }
   #continue {

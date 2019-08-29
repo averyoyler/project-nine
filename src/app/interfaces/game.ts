@@ -1,7 +1,9 @@
+import { Player } from './player';
+
 export interface Game {
   id: string;
   course: string;
   name: string;
-  players: [];
+  players: Player[];
   tee: string;
 }
