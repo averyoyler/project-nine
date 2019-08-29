@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { GameService } from '../game.service';
 import { Game } from '../interfaces/game';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-saved-games',
@@ -11,7 +12,7 @@ export class SavedGamesComponent implements OnInit {
 
   savedGames: Game[];
 
-  constructor(private gameService: GameService) { }
+  constructor(private gameService: GameService, private location: Location) { }
 
   ngOnInit() {
     this.gameService
@@ -22,12 +23,8 @@ export class SavedGamesComponent implements OnInit {
     });
   }
 
-  select(element) {
-
-  }
-
-  selectGame() {
-
+  goBack() {
+    this.location.back();
   }
 
 }

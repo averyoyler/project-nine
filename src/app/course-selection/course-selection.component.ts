@@ -15,6 +15,6 @@ export class CourseSelectionComponent implements OnInit {
   ngOnInit() {
     this.courseService
     .getGolfCourses()
-    .subscribe(data => this.courses = data);
+  .subscribe(data => this.courses = data);
   }
 }

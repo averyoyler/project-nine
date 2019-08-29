@@ -1,6 +1,6 @@
 <div class="configurations">
   <div id="numberOfPlayers">
-      <div class="closeButton" onclick="closeConfigs()">&#215;</div>
+      <div class="closeButton" [routerLink]="['']">&#215;</div>
       <span>Select A Tee:</span>
       <form id="teeForm">
           <button type="button" mat-raised-button id="pro" (click)="select($event)">PRO</button>
