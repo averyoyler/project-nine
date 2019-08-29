@@ -58,19 +58,19 @@ export class GameService {
       players: [
         {
           name: null,
-          scores: []
+          scores: [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
         },
         {
           name: null,
-          scores: []
+          scores: [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
         },
         {
           name: null,
-          scores: []
+          scores: [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
         },
         {
           name: null,
-          scores: []
+          scores: [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
         }
       ]
     }

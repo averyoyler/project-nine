@@ -82,12 +82,12 @@ export class CardComponent implements OnInit {
     console.log(event.target.id);
     const playerId = (event.target.id.charAt(1) - 1);
     const holeNumber = (event.target.id.charAt(3) - 1);
-    const newScore = event.target.textContent;
-    this.game.players[playerId].scores[holeNumber] = Number(newScore);
-    // console.log('ID: ' + playerId);
-    // console.log('Hole: ' + holeNumber);
-    // console.log('Text: ' + newScore);
-    // console.log(this.game);
+    const newScore = event.target.textContent !== '' ? Number(event.target.textContent) : null;
+    this.game.players[playerId].scores[holeNumber] = newScore;
+    console.log('ID: ' + playerId);
+    console.log('Hole: ' + holeNumber);
+    console.log('Text: ' + newScore);
+    console.log(this.game);
   }
 
   saveGame() {

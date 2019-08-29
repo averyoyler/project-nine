@@ -67,21 +67,21 @@
               [textContent]="game.players[1].scores[hole.hole -1]"
               (blur)="updateScore($event)"
               class="box p2"
-              id="p2h{{ hole }}"
+              id="p2h{{ hole.hole }}"
             ></div>
             <div
               contenteditable="true"
               [textContent]="game.players[2].scores[hole.hole -1]"
               (blur)="updateScore($event)"
               class="box p3"
-              id="p3h{{ hole }}"
+              id="p3h{{ hole.hole }}"
             ></div>
             <div
               contenteditable="true"
               [textContent]="game.players[3].scores[hole.hole -1]"
               (blur)="updateScore($event)"
               class="box p4"
-              id="p4h{{ hole }}"
+              id="p4h{{ hole.hole }}"
             ></div>
           </div>
         </div>
