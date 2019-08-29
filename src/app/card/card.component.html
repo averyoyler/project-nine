@@ -5,88 +5,103 @@
  -->
 <div class="backgroundImage"></div>
 <div class="container">
-    <div class="inner">
-      <div class="scoreCard">
-        <div class="titleBox">
-          <div class="holeColor">Hole #</div>
-          <div [className]="tee" id="teeTitle" *ngIf="tee">
-            {{ tee | firstLetterUppercase }}
-          </div>
-          <div class="handiColor">Handicap</div>
-          <div class="parColor">Par</div>
-          <div 
-            *ngIf="game"
-            (blur)="editPlayerName($event)"
-            contenteditable="true"
-            id="0"
-            [textContent]="game.players[0].name"
-          ></div>
-          <div
-            *ngIf="game"
-            (blur)="editPlayerName($event)"
-            contenteditable="true"
-            id="1"
-            [textContent]="game.players[1].name"
-          ></div>
-          <div
-            *ngIf="game"
-            (blur)="editPlayerName($event)"
-            contenteditable="true"
-            id="2"
-            [textContent]="game.players[2].name"
-          ></div>
-          <div
-            *ngIf="game"
-            (blur)="editPlayerName($event)"
-            contenteditable="true"
-            id="3"
-            [textContent]="game.players[3].name"
-          ></div>
+  <div class="topBar">
+    <div class="topBarContent">
+      <i [routerLink]="['']" class="fas fa-golf-ball"></i>
+      <span>BIRDIE</span>
+      <span class="small">Saved Games</span>
+    </div>
+  </div>
+  <div class="inner">
+    <div class="scoreCard">
+      <div class="titleBox">
+        <div class="holeColor">Hole</div>
+        <div [className]="tee" id="teeTitle" *ngIf="tee">
+          {{ tee | firstLetterUppercase }}
         </div>
-        <div class="scores">
-          <div id="h{{ hole.hole }}" *ngFor="let hole of holes">
-            <div class="holeColor box">{{ hole.hole }}</div>
-            <div [ngClass]="[tee]" class="box" id="tee{{ hole.hole }}">
-              {{ hole.teeBoxes[0].yards }}
-            </div>
-            <div class="box handiColor" id="handi{{ hole.hole }}">
-              {{ hole.teeBoxes[0].hcp }}
-            </div>
-            <div class="box parColor" id="par{{ hole.hole }}">
-              {{ hole.teeBoxes[0].par }}
-            </div>
-            <div
-              contenteditable="true"
-              [textContent]="game.players[0].scores[hole.hole -1]"
-              (blur)="updateScore($event)"
-              class="box p1"
-              id="p1h{{ hole.hole }}"
-            ></div>
-            <div
-              contenteditable="true"
-              [textContent]="game.players[1].scores[hole.hole -1]"
-              (blur)="updateScore($event)"
-              class="box p2"
-              id="p2h{{ hole.hole }}"
-            ></div>
-            <div
-              contenteditable="true"
-              [textContent]="game.players[2].scores[hole.hole -1]"
-              (blur)="updateScore($event)"
-              class="box p3"
-              id="p3h{{ hole.hole }}"
-            ></div>
-            <div
-              contenteditable="true"
-              [textContent]="game.players[3].scores[hole.hole -1]"
-              (blur)="updateScore($event)"
-              class="box p4"
-              id="p4h{{ hole.hole }}"
-            ></div>
+        <div class="handiColor">Handicap</div>
+        <div class="parColor">Par</div>
+        <div
+          *ngIf="game"
+          (blur)="editPlayerName($event)"
+          contenteditable="true"
+          id="0"
+          [textContent]="game.players[0].name"
+        ></div>
+        <div
+          *ngIf="game"
+          (blur)="editPlayerName($event)"
+          contenteditable="true"
+          id="1"
+          [textContent]="game.players[1].name"
+        ></div>
+        <div
+          *ngIf="game"
+          (blur)="editPlayerName($event)"
+          contenteditable="true"
+          id="2"
+          [textContent]="game.players[2].name"
+        ></div>
+        <div
+          *ngIf="game"
+          (blur)="editPlayerName($event)"
+          contenteditable="true"
+          id="3"
+          [textContent]="game.players[3].name"
+        ></div>
+      </div>
+      <div class="scores">
+        <div id="h{{ hole.hole }}" *ngFor="let hole of holes">
+          <div class="holeColor box">{{ hole.hole }}</div>
+          <div [ngClass]="[tee]" class="box" id="tee{{ hole.hole }}">
+            {{ hole.teeBoxes[0].yards }}
           </div>
+          <div class="box handiColor" id="handi{{ hole.hole }}">
+            {{ hole.teeBoxes[0].hcp }}
+          </div>
+          <div class="box parColor" id="par{{ hole.hole }}">
+            {{ hole.teeBoxes[0].par }}
+          </div>
+          <div
+            contenteditable="true"
+            [textContent]="game.players[0].scores[hole.hole - 1]"
+            (blur)="updateScore($event)"
+            class="box p1"
+            id="p1h{{ hole.hole }}"
+          ></div>
+          <div
+            contenteditable="true"
+            [textContent]="game.players[1].scores[hole.hole - 1]"
+            (blur)="updateScore($event)"
+            class="box p2"
+            id="p2h{{ hole.hole }}"
+          ></div>
+          <div
+            contenteditable="true"
+            [textContent]="game.players[2].scores[hole.hole - 1]"
+            (blur)="updateScore($event)"
+            class="box p3"
+            id="p3h{{ hole.hole }}"
+          ></div>
+          <div
+            contenteditable="true"
+            [textContent]="game.players[3].scores[hole.hole - 1]"
+            (blur)="updateScore($event)"
+            class="box p4"
+            id="p4h{{ hole.hole }}"
+          ></div>
         </div>
       </div>
     </div>
+  </div>
 </div>
 
-<button type="button" color="secondary" mat-raised-button id="save" (click)="saveGame()">SAVE</button>
+<button
+  type="button"
+  color="secondary"
+  mat-raised-button
+  id="save"
+  (click)="saveGame()"
+>
+  SAVE
+</button>

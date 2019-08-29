@@ -191,3 +191,35 @@ $trentsGrey: #DADFEA;
   bottom: 75px;
   left: calc(50% - 40px);
 }
+
+.topBar {
+  position: absolute;
+  top: 0;
+  background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through */
+  padding: 10px 0;
+  width: 100%;
+  //text-align: center
+  color: white;
+  font-size: 50px;
+  div {
+    margin-left: 25px;
+  }
+  .topBarContent {
+    display: flex;
+    align-items: center;
+    span {
+      margin-left: 15px;
+    }
+    .small {
+      margin-left: 30px;
+      font-size: 28px;
+      padding: 0 5px;
+      border-radius: 5px;
+    }
+    .small:hover {
+      padding: 5px;
+      transition: 0.3s;
+      background-color: rgba(0, 0, 0, 0.1); /* Black w/opacity/see-through */
+    }
+  }
+}
