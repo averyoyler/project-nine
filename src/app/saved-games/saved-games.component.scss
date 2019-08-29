@@ -24,6 +24,7 @@ $mainFont: 'Quicksand', sans-serif;
     position: absolute;
     top: 5px;
     right: 30px;
+    cursor: pointer;
   }
 }
 
@@ -35,33 +36,26 @@ $mainFont: 'Quicksand', sans-serif;
     margin-bottom: 15px;
   }
   form {
+    display: flex;
     text-align: center;
     font-size: 32px;
     display: flex;
     flex-direction: column;
-    div{
-      padding: 5px 75px 5px 75px;
-      margin-top: 25px;
-      box-shadow: 8px 8px 5px 0 grey;
-      //box-shadow: 3px 3px 10px 0 inset;
+    div {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 15px;
     }
     button {
       width: 250px;
+      font-size: 18px;
+      padding: 5px 75px;
+      text-align: center;
+      border: none;
+      outline: none;
+      background-color: cadetblue;
+      color: white;
     }
-  }
-  #continue {
-    margin-top: 20px;
-    padding: 3px 25px;
-    font-size: 15px;
-  }
-  button {
-    font-size: 18px;
-    padding: 5px 75px;
-    margin-top: 15px;
-    text-align: center;
-    border: none;
-    outline: none;
-    background-color: cadetblue;
-    color: white;
   }
 }

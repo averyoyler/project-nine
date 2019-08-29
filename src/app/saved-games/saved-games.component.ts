@@ -18,13 +18,16 @@ export class SavedGamesComponent implements OnInit {
     this.gameService
     .getSavedGames()
     .subscribe(data => {
-      console.log(data);
       this.savedGames = data;
     });
   }
 
   goBack() {
     this.location.back();
+  }
+
+  deleteGame(gameId) {
+    this.gameService.deleteGame(gameId);
   }
 
 }

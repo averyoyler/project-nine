@@ -83,6 +83,12 @@ export class GameService {
     .catch(error => console.log('update', error));
   }
 
+  deleteGame(gameId) {
+    this.gamesRef.doc(gameId).delete()
+    .then(_ => console.log('Success on update'))
+    .catch(error => console.log('update', error));
+  }
+
   private errorHandler(error) {
     console.log(error);
     return throwError(error);
