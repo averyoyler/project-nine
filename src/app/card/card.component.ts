@@ -38,10 +38,11 @@ export class CardComponent implements OnInit {
     this.gameService
     .getSavedGame(id)
     .subscribe(data => {
-      console.log(data);
+      // console.log(data);
       this.game = data;
       this.courseId = data.course;
       this.tee = data.tee;
+      console.log(this.tee);
       this.getCourseData();
     });
   }
@@ -52,6 +53,7 @@ export class CardComponent implements OnInit {
     .subscribe(data => {
       this.data = data.data;
       this.holes = data.data.holes;
+      console.log(this.data);
     });
   }
 
@@ -64,7 +66,6 @@ export class CardComponent implements OnInit {
     else {
       holeNumber = Number((event.target.id.charAt(3)) + (event.target.id.charAt(4)) - 1);
     }
-    console.log(holeNumber);
     const newScore = event.target.textContent !== '' ? Number(event.target.textContent) : null;
     this.game.players[playerId].scores[holeNumber] = newScore;
     this.updateTotals(playerId);
@@ -114,3 +115,10 @@ export class CardComponent implements OnInit {
   }
 
 }
+
+
+
+
+// 18300 pro champion men women
+// 11819 pro champion men women
+// 19002 champion men women

@@ -51,20 +51,41 @@
       </div>
 
       <div class="scores">
-
-
-
         <div id="h{{ hole.hole }}" *ngFor="let hole of holes">
           <div class="holeColor box">{{ hole.hole }}</div>
-          <div [ngClass]="[tee]" class="box" id="tee{{ hole.hole }}">
-            {{ hole.teeBoxes[0].yards }}
+
+
+          <div [ngClass]="[tee]" class="box" id="tee{{ hole.hole }}" *ngIf="courseId == '18300'">
+            {{ tee == 'pro' ? hole.teeBoxes[0].yards : tee == 'champion' ? hole.teeBoxes[1].yards : tee == 'men' ? hole.teeBoxes[2].yards : hole.teeBoxes[3].yards }}
           </div>
-          <div class="box handiColor" id="handi{{ hole.hole }}">
-            {{ hole.teeBoxes[0].hcp }}
+          <div class="box handiColor" id="handi{{ hole.hole }}" *ngIf="courseId == '18300'">
+            {{ tee == 'pro' ? hole.teeBoxes[0].hcp : tee == 'champion' ? hole.teeBoxes[1].hcp : tee == 'men' ? hole.teeBoxes[2].hcp : hole.teeBoxes[3].hcp }}
           </div>
-          <div class="box parColor" id="par{{ hole.hole }}">
-            {{ hole.teeBoxes[0].par }}
+          <div class="box parColor" id="par{{ hole.hole }}" *ngIf="courseId == '18300'">
+            {{ tee == 'pro' ? hole.teeBoxes[0].par : tee == 'champion' ? hole.teeBoxes[1].par : tee == 'men' ? hole.teeBoxes[2].par : hole.teeBoxes[3].par }}
           </div>
+
+          <div [ngClass]="[tee]" class="box" id="tee{{ hole.hole }}" *ngIf="courseId == '11819'">
+            {{ tee == 'pro' ? hole.teeBoxes[0].yards : tee == 'champion' ? hole.teeBoxes[1].yards : tee == 'men' ? hole.teeBoxes[2].yards : hole.teeBoxes[3].yards }}
+          </div>
+          <div class="box handiColor" id="handi{{ hole.hole }}" *ngIf="courseId == '11819'">
+              {{ tee == 'pro' ? hole.teeBoxes[0].hcp : tee == 'champion' ? hole.teeBoxes[1].yahcprds : tee == 'men' ? hole.teeBoxes[2].hcp : hole.teeBoxes[3].hcp }}
+            </div>
+          <div class="box parColor" id="par{{ hole.hole }}" *ngIf="courseId == '11819'">
+              {{ tee == 'pro' ? hole.teeBoxes[0].par : tee == 'champion' ? hole.teeBoxes[1].par : tee == 'men' ? hole.teeBoxes[2].par : hole.teeBoxes[3].par }}
+          </div>
+
+          <div [ngClass]="[tee]" class="box" id="tee{{ hole.hole }}" *ngIf="courseId == '19002'">
+              {{ tee == 'champion' ? hole.teeBoxes[0].yards : tee == 'men' ? hole.teeBoxes[1].yards : hole.teeBoxes[2].yards }}
+            </div>
+            <div class="box handiColor" id="handi{{ hole.hole }}" *ngIf="courseId == '19002'">
+              {{ tee == 'champion' ? hole.teeBoxes[0].hcp : tee == 'men' ? hole.teeBoxes[1].hcp : hole.teeBoxes[2].hcp }}
+            </div>
+            <div class="box parColor" id="par{{ hole.hole }}" *ngIf="courseId == '19002'">
+                {{ tee == 'champion' ? hole.teeBoxes[0].par : tee == 'men' ? hole.teeBoxes[1].par : hole.teeBoxes[2].par }}
+            </div>
+
+
           <div
             contenteditable="true"
             [textContent]="game.players[0].scores[hole.hole - 1]"
