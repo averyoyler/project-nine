@@ -16,7 +16,10 @@
       <div class="titleBox">
         <div class="holeColor">Hole</div>
         <div [className]="tee" id="teeTitle">
-          {{ tee | firstLetterUppercase }}
+          <span>{{ tee | firstLetterUppercase }}</span>
+          <i id="edit" class="material-icons" [routerLink]="['/form', courseId, 'edit', gameId]">
+            edit
+          </i>
         </div>
         <div class="handiColor">Handicap</div>
         <div class="parColor">Par</div>
@@ -69,7 +72,7 @@
             {{ tee == 'pro' ? hole.teeBoxes[0].yards : tee == 'champion' ? hole.teeBoxes[1].yards : tee == 'men' ? hole.teeBoxes[2].yards : hole.teeBoxes[3].yards }}
           </div>
           <div class="box handiColor" id="handi{{ hole.hole }}" *ngIf="courseId == '11819'">
-              {{ tee == 'pro' ? hole.teeBoxes[0].hcp : tee == 'champion' ? hole.teeBoxes[1].yahcprds : tee == 'men' ? hole.teeBoxes[2].hcp : hole.teeBoxes[3].hcp }}
+              {{ tee == 'pro' ? hole.teeBoxes[0].hcp : tee == 'champion' ? hole.teeBoxes[1].hcp : tee == 'men' ? hole.teeBoxes[2].hcp : hole.teeBoxes[3].hcp }}
             </div>
           <div class="box parColor" id="par{{ hole.hole }}" *ngIf="courseId == '11819'">
               {{ tee == 'pro' ? hole.teeBoxes[0].par : tee == 'champion' ? hole.teeBoxes[1].par : tee == 'men' ? hole.teeBoxes[2].par : hole.teeBoxes[3].par }}

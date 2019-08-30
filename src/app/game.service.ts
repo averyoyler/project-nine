@@ -409,6 +409,10 @@ export class GameService {
     .catch(error => console.log('update', error));
   }
 
+  updateTee(tee, gameId) {
+    this.gamesRef.doc(gameId).update({tee: tee})
+  }
+
   deleteGame(gameId) {
     this.gamesRef.doc(gameId).delete()
     .then(_ => console.log('Success on update'))

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { GameService } from '../game.service';
 import * as uuid from 'uuid';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-form',
@@ -11,16 +12,26 @@ import * as uuid from 'uuid';
 export class FormComponent implements OnInit {
   courseId: string;
   tee: string;
+  formMode: string;
+  gameId: string;
 
-  constructor(private route: ActivatedRoute, private gameService: GameService, private router: Router) {}
+  constructor(private route: ActivatedRoute, private gameService: GameService, private router: Router, private location: Location) {}
 
   ngOnInit() {
     this.courseId = this.route.snapshot.paramMap.get('id');
+    this.formMode = this.route.snapshot.paramMap.get('edit');
+    this.gameId = this.route.snapshot.paramMap.get('gameId');
   }
 
   select(teeType) {
     this.tee = teeType.target.id;
     this.createNewGame();
+  }
+
+  edit(teeType) {
+    this.tee = teeType.target.id;
+    this.gameService.updateTee(this.tee, this.gameId);
+    this.location.back();
   }
 
   createNewGame() {

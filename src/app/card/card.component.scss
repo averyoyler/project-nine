@@ -150,6 +150,18 @@ $mainFont: "Quicksand", sans-serif;
 
 #teeTitle {
   position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+#edit {
+  position: absolute;
+  left: 5px;
+  color: rgba(0, 0, 0, 0.1);
+}
+#edit:hover {
+  color: rgba(0, 0, 0, 0.5);
 }
 
 #teeEditButton {
@@ -296,7 +308,7 @@ $mainFont: "Quicksand", sans-serif;
   background-color: rgba(0, 0, 0, 0.4);
   color: white;
   padding: 25px;
-  top: 100px;
+  top: 92px;
 }
 
 #closepop {
