@@ -20,7 +20,6 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { environment } from 'src/environments/environment';
 import { SavedGamesComponent } from './saved-games/saved-games.component';
-import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -43,7 +42,6 @@ import { FormsModule } from '@angular/forms';
     MatSelectModule,
     MatCardModule,
     MatButtonModule,
-    FormsModule
   ],
   providers: [ DuplicateNamePipe ],
   bootstrap: [AppComponent]

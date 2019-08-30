@@ -71,7 +71,7 @@ $mainFont: "Quicksand", sans-serif;
     .outbox {
       width: 60px;
     }
-    .innbox {
+    .inbox {
       width: 60px;
     }
     .totalbox {
@@ -193,7 +193,7 @@ $mainFont: "Quicksand", sans-serif;
 #save {
   position: fixed;
   bottom: 75px;
-  left: calc(50% - 40px);
+  left: calc(50% - 33.1px);
 }
 
 .topBar {
@@ -304,4 +304,12 @@ $mainFont: "Quicksand", sans-serif;
   top: 2px;
   right: 0px;
   font-size: 105%;
+}
+
+.loadingIcon {
+  position: fixed;
+  top: 50%;
+  left: calc(50% - 25px);
+  color: white;
+  font-size: 50px;
 }

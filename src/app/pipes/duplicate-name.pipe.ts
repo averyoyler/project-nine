@@ -17,16 +17,16 @@ export class DuplicateNamePipe implements PipeTransform {
 
     if (value) {
 
-      console.log('TO CHECK: ', value, playerId);
-      console.log('Player 1: ' + children[0].textContent);
-      console.log('Player 2: ' + children[1].textContent);
-      console.log('Player 3: ' + children[2].textContent);
-      console.log('Player 4: ' + children[3].textContent);
+      // console.log('TO CHECK: ', value, playerId);
+      // console.log('Player 1: ' + children[0].textContent);
+      // console.log('Player 2: ' + children[1].textContent);
+      // console.log('Player 3: ' + children[2].textContent);
+      // console.log('Player 4: ' + children[3].textContent);
       for(let i = 0; i < children.length; i++) {
         // console.log(children[i].id, children[i].textContent)
         if(playerId != children[i].id) {
           if(value === children[i].textContent) {
-            console.log('they equal', i);
+            // console.log('they equal', i);
             let player = playerId + 1;
             return `Player ${player}`;
           }

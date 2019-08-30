@@ -1,7 +1,6 @@
 import { Component, OnInit, ɵConsole } from '@angular/core';
 import { CourseService } from '../course-selection/course.service';
 import { ActivatedRoute } from '@angular/router';
-import { Player } from '../interfaces/player';
 import { GameService } from '../game.service';
 
 
@@ -17,7 +16,6 @@ export class CardComponent implements OnInit {
   tee: string;
   holes: any;
   data: any;
-  players: Player[];
   game: any;
   show: boolean = false;
   savepop: boolean = false;
@@ -40,10 +38,10 @@ export class CardComponent implements OnInit {
     this.gameService
     .getSavedGame(id)
     .subscribe(data => {
+      console.log(data);
       this.game = data;
       this.courseId = data.course;
       this.tee = data.tee;
-      this.players = data.players;
       this.getCourseData();
     });
   }
@@ -59,9 +57,34 @@ export class CardComponent implements OnInit {
 
   updateScore(event) {
     const playerId = (event.target.id.charAt(1) - 1);
-    const holeNumber = (event.target.id.charAt(3) - 1);
+    let holeNumber;
+    if(event.target.id.length === 4) {
+      holeNumber = (event.target.id.charAt(3) - 1);
+    }
+    else {
+      holeNumber = Number((event.target.id.charAt(3)) + (event.target.id.charAt(4)) - 1);
+    }
+    console.log(holeNumber);
     const newScore = event.target.textContent !== '' ? Number(event.target.textContent) : null;
     this.game.players[playerId].scores[holeNumber] = newScore;
+    this.updateTotals(playerId);
+  }
+
+  updateTotals(playerId) {
+    let outtotal = 0;
+    let intotal = 0;
+    let total = 0;
+    console.log(this.game.players[playerId]);
+    for(let i = 0; i <= 8; i++) {
+      outtotal += this.game.players[playerId].scores[i];
+    }
+    for(let i = 9; i <= 17; i++) {
+      intotal += this.game.players[playerId].scores[i];
+    }
+    total = outtotal + intotal;
+    this.game.players[playerId].totals.in = intotal;
+    this.game.players[playerId].totals.out = outtotal;
+    this.game.players[playerId].totals.total = total;
   }
 
   updateGameName(element) {

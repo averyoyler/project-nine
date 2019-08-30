@@ -9,20 +9,18 @@
     <div class="topBarContent">
       <i [routerLink]="['']" class="fas fa-golf-ball"></i>
       <span>BIRDIE</span>
-      <span [routerLink]="['/saved-games']" class="small">Saved Games</span>
     </div>
   </div>
   <div class="inner">
-    <div class="scoreCard">
+    <div class="scoreCard" *ngIf="data">
       <div class="titleBox">
         <div class="holeColor">Hole</div>
-        <div [className]="tee" id="teeTitle" *ngIf="tee">
+        <div [className]="tee" id="teeTitle">
           {{ tee | firstLetterUppercase }}
         </div>
         <div class="handiColor">Handicap</div>
         <div class="parColor">Par</div>
         <div
-          *ngIf="game"
           (blur)="editPlayerName($event)"
           contenteditable="true"
           id="0"
@@ -30,7 +28,6 @@
           [textContent]="(game.players[0].name | duplicateName:0:id0)"
         ></div>
         <div
-          *ngIf="game"
           (blur)="editPlayerName($event)"
           contenteditable="true"
           id="1"
@@ -38,7 +35,6 @@
           [textContent]="(game.players[1].name | duplicateName:1:id1)"
         ></div>
         <div
-          *ngIf="game"
           (blur)="editPlayerName($event)"
           contenteditable="true"
           id="2"
@@ -46,7 +42,6 @@
           [textContent]="(game.players[2].name  | duplicateName:2:id2)"
         ></div>
         <div
-          *ngIf="game"
           (blur)="editPlayerName($event)"
           contenteditable="true"
           id="3"
@@ -54,7 +49,11 @@
           [textContent]="(game.players[3].name  | duplicateName:3:id3)"
         ></div>
       </div>
+
       <div class="scores">
+
+
+
         <div id="h{{ hole.hole }}" *ngFor="let hole of holes">
           <div class="holeColor box">{{ hole.hole }}</div>
           <div [ngClass]="[tee]" class="box" id="tee{{ hole.hole }}">
@@ -95,12 +94,65 @@
             id="p4h{{ hole.hole }}"
           ></div>
         </div>
+
+        <div class="outbox">
+            <div class="holeColor box outbox">OUT</div>
+            <div class="box outbox" [ngClass]="[tee]">
+              
+            </div>
+            <div class="box outbox handiColor">
+  
+            </div>
+            <div class="box outbox parColor">
+  
+            </div>
+            <div class="box outbox">{{ game.players[0].totals.out }}</div>
+            <div class="box outbox">{{ game.players[1].totals.out }}</div>
+            <div class="box outbox">{{ game.players[2].totals.out }}</div>
+            <div class="box outbox">{{ game.players[3].totals.out }}</div>
+        </div>
+
+        <div class="inbox">
+            <div class="holeColor box inbox">IN</div>
+            <div class="box inbox" [ngClass]="[tee]">
+              
+            </div>
+            <div class="box inbox handiColor">
+  
+            </div>
+            <div class="box inbox parColor">
+  
+            </div>
+            <div class="box inbox">{{ game.players[0].totals.in }}</div>
+            <div class="box inbox">{{ game.players[1].totals.in }}</div>
+            <div class="box inbox">{{ game.players[2].totals.in }}</div>
+            <div class="box inbox">{{ game.players[3].totals.in }}</div>
+        </div>
+
+        <div class="totalbox">
+            <div class="holeColor box totalbox">TOTAL</div>
+            <div class="box totalbox" [ngClass]="[tee]">
+              
+            </div>
+            <div class="box totalbox handiColor">
+  
+            </div>
+            <div class="box totalbox parColor">
+  
+            </div>
+            <div class="box totalbox">{{ game.players[0].totals.total }}</div>
+            <div class="box totalbox">{{ game.players[1].totals.total }}</div>
+            <div class="box totalbox">{{ game.players[2].totals.total }}</div>
+            <div class="box totalbox">{{ game.players[3].totals.total }}</div>
+        </div>
+
       </div>
     </div>
   </div>
 </div>
 
 <button
+  *ngIf="data"
   type="button"
   color="secondary"
   mat-raised-button
@@ -128,4 +180,8 @@
   <i (click)="hide()" class="material-icons" id="closepop">
     close
   </i>
+</div>
+
+<div *ngIf="!data" class="loadingIcon">
+  <i class="fa fa-spinner fa-spin"></i>
 </div>

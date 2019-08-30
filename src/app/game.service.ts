@@ -50,19 +50,39 @@ export class GameService {
       players: [
         {
           name: null,
-          scores: [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+          scores: [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null],
+          totals: {
+            in: '-',
+            out: '-',
+            total: '-'
+          }
         },
         {
           name: null,
-          scores: [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+          scores: [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null],
+          totals: {
+            in: '-',
+            out: '-',
+            total: '-'
+          }
         },
         {
           name: null,
-          scores: [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+          scores: [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null],
+          totals: {
+            in: '-',
+            out: '-',
+            total: '-'
+          }
         },
         {
           name: null,
-          scores: [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+          scores: [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null],
+          totals: {
+            in: '-',
+            out: '-',
+            total: '-'
+          }
         }
       ]
     }
