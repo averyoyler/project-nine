@@ -1,12 +1,12 @@
 <div class="configurations">
   <div id="numberOfPlayers">
       <div [routerLink]="['']" class="closeButton">&#215;</div>
-      <span>Select A Tee:</span>
+      <span>Select a Tee</span>
       <form id="teeForm">
-          <button type="button" [routerLink]="['/card/BWkB9PGzipG5CAQVvZnQ']" mat-raised-button id="pro" (click)="select($event)">PRO</button>
-          <button type="button" [routerLink]="['/card/BWkB9PGzipG5CAQVvZnQ']" mat-raised-button id="champion" (click)="select($event)">CHAMPION</button>
-          <button type="button" [routerLink]="['/card/BWkB9PGzipG5CAQVvZnQ']" mat-raised-button id="men" (click)="select($event)">MEN</button>
-          <button type="button" [routerLink]="['/card/BWkB9PGzipG5CAQVvZnQ']" mat-raised-button id="women" (click)="select($event)">WOMEN</button>
+          <button type="button" mat-raised-button id="pro" (click)="select($event)">PRO</button>
+          <button type="button" mat-raised-button id="champion" (click)="select($event)">CHAMPION</button>
+          <button type="button" mat-raised-button id="men" (click)="select($event)">MEN</button>
+          <button type="button" mat-raised-button id="women" (click)="select($event)">WOMEN</button>
       </form>
   </div>
 </div>

@@ -10,11 +10,11 @@ export class CourseSelectionComponent implements OnInit {
 
   courses: any[];
 
-  constructor(private courseService: CourseService) { }
+  constructor(private courseService: CourseService) {}
 
   ngOnInit() {
     this.courseService
     .getGolfCourses()
-  .subscribe(data => this.courses = data);
+    .subscribe(data => this.courses = data);
   }
 }

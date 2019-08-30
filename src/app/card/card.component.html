@@ -26,28 +26,32 @@
           (blur)="editPlayerName($event)"
           contenteditable="true"
           id="0"
-          [textContent]="game.players[0].name"
+          #id0
+          [textContent]="(game.players[0].name | duplicateName:0:id0)"
         ></div>
         <div
           *ngIf="game"
           (blur)="editPlayerName($event)"
           contenteditable="true"
           id="1"
-          [textContent]="game.players[1].name"
+          #id1
+          [textContent]="(game.players[1].name | duplicateName:1:id1)"
         ></div>
         <div
           *ngIf="game"
           (blur)="editPlayerName($event)"
           contenteditable="true"
           id="2"
-          [textContent]="game.players[2].name"
+          #id2
+          [textContent]="(game.players[2].name  | duplicateName:2:id2)"
         ></div>
         <div
           *ngIf="game"
           (blur)="editPlayerName($event)"
           contenteditable="true"
           id="3"
-          [textContent]="game.players[3].name"
+          #id3
+          [textContent]="(game.players[3].name  | duplicateName:3:id3)"
         ></div>
       </div>
       <div class="scores">
@@ -108,7 +112,7 @@
 
 <div class="configurations" *ngIf="show">
   <div id="numberOfPlayers">
-    <div class="closeButton" onclick="closeConfigs()">&#215;</div>
+    <div class="closeButton" onclick="closeSave()">&#215;</div>
     <span>Enter New Game Name</span>
     <form id="teeForm">
       <input #name type="text" />
@@ -119,7 +123,9 @@
   </div>
 </div>
 
-<div *ngIf="popup" class="saved">
+<div *ngIf="savepop" class="saved">
   <span>Your scorecard has been saved!</span>
-  <i (click)="hide()" class="fas fa-times-circle"></i>
+  <i (click)="hide()" class="material-icons" id="closepop">
+    close
+  </i>
 </div>

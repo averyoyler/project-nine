@@ -1,10 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ɵConsole } from '@angular/core';
 import { CourseService } from '../course-selection/course.service';
 import { ActivatedRoute } from '@angular/router';
 import { Player } from '../interfaces/player';
-import { Game } from '../interfaces/game';
 import { GameService } from '../game.service';
-import { connectableObservableDescriptor } from 'rxjs/internal/observable/ConnectableObservable';
 
 
 @Component({
@@ -22,13 +20,13 @@ export class CardComponent implements OnInit {
   players: Player[];
   game: any;
   show: boolean = false;
-  popup: boolean = false;
+  savepop: boolean = false;
 
-  constructor(private courseService: CourseService, private route: ActivatedRoute, private gameService: GameService) {}
+  constructor(private courseService: CourseService, private route: ActivatedRoute, private gameService: GameService) {
+  }
 
   ngOnInit() {
     this.gameId = this.route.snapshot.paramMap.get('id');
-    // this.tee = this.route.snapshot.paramMap.get('tee');
     this.getSavedGame(this.gameId);
   }
 
@@ -36,15 +34,12 @@ export class CardComponent implements OnInit {
     const newName = element.target.textContent;
     const playerId = element.target.id
     this.game.players[playerId].name = newName;
-    console.log(this.game);
   }
 
   getSavedGame(id) {
     this.gameService
     .getSavedGame(id)
     .subscribe(data => {
-      // console.log("Saved Game:")
-      // console.log(data);
       this.game = data;
       this.courseId = data.course;
       this.tee = data.tee;
@@ -59,13 +54,10 @@ export class CardComponent implements OnInit {
     .subscribe(data => {
       this.data = data.data;
       this.holes = data.data.holes;
-      // console.log(this.holes);
-      // console.log(this.game.players[0].scores[0]);
     });
   }
 
   updateScore(event) {
-    console.log(event.target.id);
     const playerId = (event.target.id.charAt(1) - 1);
     const holeNumber = (event.target.id.charAt(3) - 1);
     const newScore = event.target.textContent !== '' ? Number(event.target.textContent) : null;
@@ -85,13 +77,17 @@ export class CardComponent implements OnInit {
     }
     else {
       this.show = false;
+      this.savepop = true;
       this.gameService.saveGame(this.gameId, this.game)
     }
-    this.popup = true;
+  }
+
+  closeSave() {
+    this.show = false;
   }
 
   hide() {
-    this.popup = false;
+    this.savepop = false;
   }
 
 }
