@@ -19,6 +19,7 @@ export class SavedGamesComponent implements OnInit {
     .getSavedGames()
     .subscribe(data => {
       this.savedGames = data;
+      console.log(this.savedGames);
     });
   }
 

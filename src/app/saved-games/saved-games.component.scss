@@ -47,15 +47,23 @@ $mainFont: 'Quicksand', sans-serif;
       justify-content: center;
       margin-top: 15px;
     }
-    button {
-      width: 250px;
-      font-size: 18px;
-      padding: 5px 75px;
-      text-align: center;
-      border: none;
-      outline: none;
-      background-color: cadetblue;
-      color: white;
-    }
   }
+}
+
+button {
+  font-size: 18px;
+  padding: 5px 75px;
+  text-align: center;
+  border: none;
+  outline: none;
+  background-color: cadetblue;
+  color: white;
+}
+
+.loadingIcon {
+  position: fixed;
+  top: 50%;
+  left: calc(50% - 25px);
+  color: rgba(0, 0, 0, 0.3);
+  font-size: 50px;
 }

@@ -40,4 +40,8 @@ export class FormComponent implements OnInit {
     this.gameService.createNewGame(this.courseId, this.tee, docId)
     .then(_ => this.router.navigate(['/card', docId]));
   }
+
+  goBack() {
+    this.location.back();
+  }
 }

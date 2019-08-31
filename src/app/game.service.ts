@@ -17,304 +17,304 @@ export class GameService {
     this.gamesRef = this.db.collection<Game>('games');
     this.names = [
       {
-        "name": "ut fugiat"
+        "name": "Ut Fugiat"
       },
       {
-        "name": "minim excepteur"
+        "name": "Minim Excepteur"
       },
       {
-        "name": "quis cillum"
+        "name": "Quis Cillum"
       },
       {
-        "name": "velit ex"
+        "name": "Velit Ex"
       },
       {
-        "name": "eu Lorem"
+        "name": "Eu Lorem"
       },
       {
-        "name": "ullamco cupidatat"
+        "name": "Ullamco Cupidatat"
       },
       {
-        "name": "proident incididunt"
+        "name": "Proident Incididunt"
       },
       {
-        "name": "aliquip id"
+        "name": "Aliquip Id"
       },
       {
-        "name": "Lorem sint"
+        "name": "Lorem Sint"
       },
       {
-        "name": "ex do"
+        "name": "Ex Do"
       },
       {
-        "name": "incididunt in"
+        "name": "Incididunt In"
       },
       {
-        "name": "aliqua sunt"
+        "name": "Aliqua Sunt"
       },
       {
-        "name": "adipisicing veniam"
+        "name": "Adipisicing Veniam"
       },
       {
-        "name": "adipisicing proident"
+        "name": "Adipisicing Proident"
       },
       {
-        "name": "ex magna"
+        "name": "Ex magna"
       },
       {
-        "name": "id enim"
+        "name": "Id Enim"
       },
       {
-        "name": "ullamco minim"
+        "name": "Ullamco Minim"
       },
       {
-        "name": "nisi duis"
+        "name": "Nisi Duis"
       },
       {
-        "name": "et cupidatat"
+        "name": "Et Cupidatat"
       },
       {
-        "name": "amet ullamco"
+        "name": "Amet Ullamco"
       },
       {
-        "name": "aute reprehenderit"
+        "name": "Aute Reprehenderit"
       },
       {
-        "name": "pariatur culpa"
+        "name": "Pariatur Culpa"
       },
       {
-        "name": "eiusmod deserunt"
+        "name": "Eiusmod Deserunt"
       },
       {
-        "name": "ex consectetur"
+        "name": "Ex Consectetur"
       },
       {
-        "name": "aute nostrud"
+        "name": "Aute Nostrud"
       },
       {
-        "name": "in mollit"
+        "name": "In Mollit"
       },
       {
-        "name": "consequat qui"
+        "name": "Consequat Qui"
       },
       {
-        "name": "et adipisicing"
+        "name": "Et Adipisicing"
       },
       {
-        "name": "consequat eiusmod"
+        "name": "Consequat Eiusmod"
       },
       {
-        "name": "do officia"
+        "name": "Do Officia"
       },
       {
-        "name": "do consequat"
+        "name": "Do Consequat"
       },
       {
-        "name": "quis sit"
+        "name": "Quis Sit"
       },
       {
-        "name": "esse cupidatat"
+        "name": "Esse Cupidatat"
       },
       {
-        "name": "pariatur anim"
+        "name": "Pariatur Anim"
       },
       {
-        "name": "mollit proident"
+        "name": "Mollit Proident"
       },
       {
-        "name": "commodo excepteur"
+        "name": "Commodo Excepteur"
       },
       {
-        "name": "reprehenderit labore"
+        "name": "Reprehenderit Labore"
       },
       {
-        "name": "reprehenderit in"
+        "name": "Reprehenderit In"
       },
       {
-        "name": "officia ut"
+        "name": "Officia Ut"
       },
       {
-        "name": "excepteur id"
+        "name": "Excepteur Id"
       },
       {
-        "name": "nulla veniam"
+        "name": "Nulla Veniam"
       },
       {
-        "name": "velit ea"
+        "name": "Velit Ea"
       },
       {
-        "name": "sunt anim"
+        "name": "Sunt Anim"
       },
       {
-        "name": "occaecat esse"
+        "name": "Occaecat Esse"
       },
       {
-        "name": "irure Lorem"
+        "name": "Irure Lorem"
       },
       {
-        "name": "id elit"
+        "name": "Id Elit"
       },
       {
-        "name": "veniam sit"
+        "name": "Veniam Sit"
       },
       {
-        "name": "laboris eiusmod"
+        "name": "Laboris Eiusmod"
       },
       {
-        "name": "id adipisicing"
+        "name": "Id Adipisicing"
       },
       {
-        "name": "nostrud velit"
+        "name": "Nostrud Velit"
       },
       {
-        "name": "et aute"
+        "name": "Et Aute"
       },
       {
-        "name": "enim Lorem"
+        "name": "Enim Lorem"
       },
       {
-        "name": "consequat enim"
+        "name": "Consequat Enim"
       },
       {
-        "name": "laborum consequat"
+        "name": "Laborum Consequat"
       },
       {
-        "name": "cupidatat elit"
+        "name": "Cupidatat Elit"
       },
       {
-        "name": "non cupidatat"
+        "name": "Non Cupidatat"
       },
       {
-        "name": "enim esse"
+        "name": "Enim Esse"
       },
       {
-        "name": "irure magna"
+        "name": "Irure Magna"
       },
       {
-        "name": "magna cillum"
+        "name": "Magna Cillum"
       },
       {
-        "name": "irure sit"
+        "name": "Irure Cit"
       },
       {
-        "name": "labore eu"
+        "name": "Labore Eu"
       },
       {
-        "name": "anim dolore"
+        "name": "Anim Dolore"
       },
       {
-        "name": "adipisicing labore"
+        "name": "Adipisicing Labore"
       },
       {
-        "name": "do tempor"
+        "name": "Do Tempor"
       },
       {
-        "name": "occaecat dolor"
+        "name": "Occaecat Dolor"
       },
       {
-        "name": "id labore"
+        "name": "Id Labore"
       },
       {
-        "name": "excepteur incididunt"
+        "name": "Excepteur Incididunt"
       },
       {
-        "name": "id velit"
+        "name": "Id Velit"
       },
       {
-        "name": "ex est"
+        "name": "Ex Est"
       },
       {
-        "name": "sunt pariatur"
+        "name": "Sunt Pariatur"
       },
       {
-        "name": "proident aute"
+        "name": "Proident Aute"
       },
       {
-        "name": "ut exercitation"
+        "name": "Ut Exercitation"
       },
       {
-        "name": "ut ea"
+        "name": "Ut Ea"
       },
       {
-        "name": "nisi labore"
+        "name": "Nisi Labore"
       },
       {
-        "name": "esse est"
+        "name": "Esse Est"
       },
       {
-        "name": "ipsum cupidatat"
+        "name": "Ipsum Cupidatat"
       },
       {
-        "name": "consequat esse"
+        "name": "Consequat Esse"
       },
       {
-        "name": "cillum excepteur"
+        "name": "Cillum Excepteur"
       },
       {
-        "name": "velit aliquip"
+        "name": "Velit Aliquip"
       },
       {
-        "name": "sit officia"
+        "name": "Sit Officia"
       },
       {
-        "name": "sit velit"
+        "name": "Sit Velit"
       },
       {
-        "name": "quis non"
+        "name": "Quis Non"
       },
       {
-        "name": "incididunt consectetur"
+        "name": "Incididunt Consectetur"
       },
       {
-        "name": "nulla ipsum"
+        "name": "Nulla Ipsum"
       },
       {
-        "name": "pariatur excepteur"
+        "name": "Pariatur Excepteur"
       },
       {
-        "name": "labore Lorem"
+        "name": "Labore Lorem"
       },
       {
-        "name": "cillum elit"
+        "name": "Cillum Elit"
       },
       {
-        "name": "sunt do"
+        "name": "Sunt Do"
       },
       {
-        "name": "qui velit"
+        "name": "Qui Velit"
       },
       {
-        "name": "deserunt deserunt"
+        "name": "Deserunt Deserunt"
       },
       {
-        "name": "id ut"
+        "name": "Id Ut"
       },
       {
-        "name": "ullamco irure"
+        "name": "Ullamco Irure"
       },
       {
-        "name": "anim exercitation"
+        "name": "Anim Exercitation"
       },
       {
-        "name": "laborum in"
+        "name": "Laborum In"
       },
       {
-        "name": "sint deserunt"
+        "name": "Sint Deserunt"
       },
       {
-        "name": "et reprehenderit"
+        "name": "Et Reprehenderit"
       },
       {
-        "name": "tempor non"
+        "name": "Tempor Non"
       },
       {
-        "name": "officia dolor"
+        "name": "Officia Dolor"
       },
       {
-        "name": "nostrud dolore"
+        "name": "Nostrud Dolore"
       },
       {
-        "name": "velit fugiat"
+        "name": "Velit Fugiat"
       }
     ]
   }
